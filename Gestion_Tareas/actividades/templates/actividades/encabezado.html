@@ -1,0 +1,138 @@
+<html lang="es">
+
+<head>
+    <title>Ejemplo</title>
+</head>
+
+
+<!--MENÚ-->
+
+<title>{% block titulo%}{% endblock %}</title>
+{% load static %}
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/londinium-theme.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'css/icons.css' %}" rel="stylesheet" type="text/css">
+
+
+<body style="background-color: rgb(250, 233, 178);">
+
+    <div>
+
+
+
+        <!--Barra de navegación-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <a class="navbar-brand" href="#">
+                <img src="https://i.ibb.co/9ygLjwQ/descarga.png" alt="logo" width="70" height="30">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/actividades">Actividades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/formulario">Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/biblioteca">Biblioteca</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin_perfil">Administrador</a>
+                    </li>
+
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0" style="background-color: rgb(250, 233, 178);">
+
+
+                    <a class="nav-link" href="/perfil">Perfil</a>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <!--/Barra de navegación-->
+
+
+
+
+
+
+
+    <!-- CONTENIDO -->
+    {% block contenido %}
+    <!--Template Tag-->
+    <!--block sirve para indicar que colocaremos un bloque de
+contenido a través de nuestra variable content -->
+    {% endblock %}
+
+    <!--Footer-->
+    <div class="container">
+
+
+
+
+
+        <footer class="text-center text-white bg-info">
+            <!-- Grid container -->
+            <div class="container pt-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                        data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i>
+                    <img src="https://i.ibb.co/nQQv7CR/fe0ab67fa0de2b2681602db5708a076f50dd21106e0c2d38b9661875a37e235e-100.jpg"  alt="face" width="50" height="30">
+                    </a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                        data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i>
+                    <img src="https://i.ibb.co/8r9sJb8/twitter.png" alt="twit" width="50" height="30">
+                    </a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                        data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i>
+                    <img src="https://i.ibb.co/Xx2wkwv/insta.jpg" alt="insta" width="50" height="30">
+                    </a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                        data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                    <!-- Github -->
+                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                        data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+    </div>
+
+
+    <!--/Footer-->
+
+
+
+</body>
+
+
+</html>
