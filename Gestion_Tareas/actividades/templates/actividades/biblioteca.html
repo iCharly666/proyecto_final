@@ -1,5 +1,4 @@
-
-
+{% extends "actividades/encabezado.html" %}
 {%block contenido %}
 <!doctype html>
 <html lang="en">
@@ -25,109 +24,60 @@
 
 
 
-        <!--Barra de navegación-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
-            <a class="navbar-brand" href="#">
-                <img src="https://i.ibb.co/9ygLjwQ/descarga.png" alt="logo" width="70" height="30">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/actividades">Actividades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/formulario">Formulario</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/biblioteca">Biblioteca</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admin_perfil">Administrador</a>
-                    </li>
+        <h1 class="text-center">Biblioteca</h1>
 
 
-                </ul>
-                <form class="form-inline my-2 my-lg-0" style="background-color: rgb(250, 233, 178);">
+        <div class="container">
+
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="main-breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="principal.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Biblioteca</li>
+                </ol>
+            </nav>
+            <!-- /Breadcrumb -->
+
+            <div class="ol-xs-12">
+                <!--tabla -->
+                <table class="table" style="background-color: rgb(245, 203, 67);">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Editorial</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">descarga</th>
+                        </tr>
 
 
-                    <a class="nav-link" href="/perfil">Perfil</a>
-                </form>
+                    </thead>
+                    <tbody>
+                        {% for bibliotecas in bibliotecas %}
+                        <tr>
+                            <td class="text-semibold">{{bibliotecas.id}}</td>
+                            <td class="text-semibold">{{bibliotecas.editorial}}</td>
+                            <td class="muted">{{bibliotecas.nombre}}</td>
+                            <td class="muted"><a href="{{ bibliotecas.uploadedFile.url }}">descargar libro</a></td>
+
+
+
+                        </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                <!--tabla -->
+
+
+
+
+
             </div>
-        </nav>
-    </div>
-
-    <!--/Barra de navegación-->
-
-
-    <h1 class="text-center">Biblioteca</h1>
-
-
-    <div class="container">
-
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="main-breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="principal.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Biblioteca</li>
-            </ol>
-        </nav>
-        <!-- /Breadcrumb -->
-
-        <div class="ol-xs-12">
-
-            <table class="table"  style="background-color: rgb(245, 203, 67);">
-                <thead>
-                    <tr>
-                        <th scope="col">ID LIbro</th>
-                        <th scope="col">Editorial</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Descargar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Cátedra
-                            </a></td>
-                        <td>El diablo de los números</td>
-
-                        <td><button type="submit" class="btn btn-primary">Descargar</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>
-                            Marcial Pons
-                            </a>
-                        </td>
-                        <td>Matemáticas Básicas</td>
-
-                        <td><button type="submit" class="btn btn-primary">Descargar</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>
-                            Antoine de Saint-Exupéry
-                            </a></td>
-                        <td>El principito</td>
-
-                        <td><button type="submit" class="btn btn-primary">Descargar</button></td>
-                    </tr>
-
-                </tbody>
-            </table>
 
 
 
         </div>
+
 
 
 
@@ -136,63 +86,6 @@
 
 
 
-    </div>
-
-
-
-<!--Footer-->
-<div class="container">
-
-
-
-
-
-    <footer class="text-center text-white bg-info" style=" margin-top:2cm;">
-        <!-- Grid container -->
-        <div class="container pt-4">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i>
-            <img src="https://i.ibb.co/nQQv7CR/fe0ab67fa0de2b2681602db5708a076f50dd21106e0c2d38b9661875a37e235e-100.jpg"  alt="face" width="50" height="30">
-            </a>
-
-            <!-- Twitter -->
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i>
-            <img src="https://i.ibb.co/8r9sJb8/twitter.png" alt="twit" width="50" height="30">
-            </a>
-
-            <!-- Instagram -->
-            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i>
-            <img src="https://i.ibb.co/Xx2wkwv/insta.jpg" alt="insta" width="50" height="30">
-            </a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-                <!-- Github -->
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-
-</div>
-
-
-<!--/Footer-->
 
 
     <!-- Optional JavaScript; choose one of the two! -->

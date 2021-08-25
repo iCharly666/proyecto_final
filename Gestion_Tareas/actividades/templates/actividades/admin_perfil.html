@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <h1 class="text-center">Perfil Administrador</h1>
+    <h1 class="text-center">Foro</h1>
 
     <div class="container">
         <div class="main-body">
@@ -26,8 +26,8 @@
             <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="principal.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Perfil</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Usuario Administrador</li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Foro</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dudas registradas</li>
                 </ol>
             </nav>
             <!-- /Breadcrumb -->
@@ -41,8 +41,8 @@
                                     class="rounded-circle" width="150">
                                 <div class="mt-3">
                                     <h4>Administrador</h4>
-                                    <p class="text-secondary mb-1">SysAdmin</p>
-                                    <p class="text-muted font-size-sm">Morelia Mich</p>
+                                    <p class="text-secondary mb-1">Problemas con la APP</p>
+                                    <p class="text-muted font-size-sm">contacto: soporteutm@gmail.com</p>
                                 </div>
                             </div>
                         </div>
@@ -62,45 +62,41 @@
                         </ul>
                     </div>
                 </div>
+                <!--Tabla-->
                 <div class="col-md-8">
                     <div class="card mb-3">
                         <div class="card-body">
 
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Email</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    utm@gmail.com
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Phone</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    44 35 94 70 88
-                                </div>
-                            </div>
+                            <!-- Tabla de Alumnos -->
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Mensaje</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for comentario in comentarios %}
+                                    <tr>
+                                        <td class="text-semibold">{{comentario.materia}}</td>
+                                        <td class="muted">{{comentario.mensaje}}</td>
+                                        <td class="text-center"><a
+                                                href="{%url 'ConsultaIndividual' comentario.id%}">Editar</a>
+                                        </td>
+                                        <td class="text-center">Eliminar</td>
 
-                            <hr>
-                            <div class="row">
-                                <div class="p-3">
-                                    <h2>Crear Actividad para Alumno</h2>
-                                </div>
-
-                                <div class="col-sm-12 mt-3">
-                                    <a class="btn btn-info " target="__blank" href="/agregar_actividad">Agregar
-                                        Actividad</a>
-                                </div>
-                            </div>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <!-- /Tabla de alumnos -->
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -122,6 +118,5 @@
 </body>
 
 </html>
-
 
 {%endblock%}
